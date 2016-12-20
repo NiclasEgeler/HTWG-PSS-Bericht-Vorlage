@@ -1,0 +1,46 @@
+\documentclass[
+		11pt,
+		a4paper,
+		toc=listof, %% Abbildungs- und Tabellenverzeichnis mit ins Inhaltsverzeichnis
+		bibliography=totoc %% Quellenverzeichnis mit ins Inhaltsverzeichnis
+		]{scrreprt}	 %% KOMA Script
+
+\input{preamble/packete}
+\input{preamble/optionen}
+\input{preamble/variablen}
+
+
+\begin{document}
+%% Nummerierung aus
+\pagenumbering{gobble}
+
+% HTWG Tempaltes fuer Titelseite etc.
+\include{htwg/cover}
+\include{htwg/abstract}
+
+\pagenumbering{Roman}
+
+\tableofcontents
+
+\input{acronym}
+
+%% Starte Paginierung
+\cleardoublepage
+\pagenumbering{arabic}
+
+\include{kapitel1/einleitung}
+
+\include{kapitel2/allgemeine_informationen}
+
+\include{kapitel3/thema1}
+
+\include{kapitel7/gesamtreflexion}
+
+\listoffigures
+\lstlistoflistings
+\listoftables
+
+\bibliographystyle{apalike}
+\bibliography{citeulike}
+\end{document}
+

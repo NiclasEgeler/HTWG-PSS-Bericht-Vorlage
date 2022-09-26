@@ -4,6 +4,7 @@
 *.fls
 *.out
 *.aux
+**/*.aux
 *.blg
 *.bbl
 *.lot

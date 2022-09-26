@@ -8,4 +8,5 @@
 *.bbl
 *.lot
 *.log
+*.lof
 *.fdb_latexmk

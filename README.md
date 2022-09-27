@@ -1,6 +1,4 @@
-Auf der Basis von T1m1´s Vorlage (https://github.com/T1m1/customized-latex-htwg-template), habe ich mir eine eigene Latex Vorlage für das Praxissemester gebastelt.
-Feel free to use it.
+# PSS Bericht LaTeX Vorlage
 
-Empfohlener Editor: http://www.texstudio.org/
+Leicht überarbeitete Version einer LaTeX Vorlage für einen Praktikumsbericht an der HTWG auf Basis von [aTTraX's Vorlage](https://github.com/aTTraX/pss-bericht-vorlage).
 
-Zitierhilfe die direkten BibTeX Code liefert: http://scholar.google.de

@@ -25,15 +25,16 @@
 
 %% Sperrvermerk?
 \ifbool{sperrvermerk}{
-	\include{preamble/sperrvermerk}
+	\input{preamble/sperrvermerk}
 }
 
+%% Abkürzungsverzeichnis
+\input{preamble/acronym}
+
 \listoffigures
-\lstlistoflistings
+%\lstlistoflistings
 \listoftables
 
-%% Abkürzungsverzeichnis
-\include{preamble/acronym}
 
 %% Starte Paginierung
 
@@ -46,9 +47,12 @@
 
 \include{kapitel3/projekte}
 
-\include{kapitel4/gesamtreflexion}
+\include{kapitel4/umfeld}
+
+\include{kapitel5/fazit}
 
 \bibliographystyle{apalike}
 \bibliography{citeulike}
+
 \end{document}
 

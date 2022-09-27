@@ -11,34 +11,42 @@
 
 
 \begin{document}
-%% Nummerierung aus
-\pagenumbering{gobble}
 
-% HTWG Tempaltes fuer Titelseite etc.
-\include{htwg/cover}
-\include{htwg/abstract}
+%% HTWG Titelseite
+\include{cover/cover}
 
+%% Römische Numierung
 \pagenumbering{Roman}
 
-\tableofcontents
+%% Inhaltsverzeichnis
+{\hypersetup{linkcolor=black}
+	\tableofcontents
+}
 
-\input{preamble/acronym}
+%% Sperrvermerk?
+\ifbool{sperrvermerk}{
+	\include{preamble/sperrvermerk}
+}
+
+\listoffigures
+\lstlistoflistings
+\listoftables
+
+%% Abkürzungsverzeichnis
+\include{preamble/acronym}
 
 %% Starte Paginierung
+
 \cleardoublepage
 \pagenumbering{arabic}
 
 \include{kapitel1/einleitung}
 
-\include{kapitel2/allgemeine_informationen}
+\include{kapitel2/betrieb}
 
-\include{kapitel3/thema1}
+\include{kapitel3/projekte}
 
 \include{kapitel4/gesamtreflexion}
-
-\listoffigures
-\lstlistoflistings
-\listoftables
 
 \bibliographystyle{apalike}
 \bibliography{citeulike}

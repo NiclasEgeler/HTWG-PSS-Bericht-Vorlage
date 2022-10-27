@@ -1,23 +1,83 @@
-\setcounter{tocdepth}{2}  %% Uebreschriften bis subsectionw ins Inhaltsverzeichnis
-\setcounter{secnumdepth}{3}  %% Nummerierung bis subsection
+\setcounter{tocdepth}{2}  % Uebreschriften bis subsectionw ins Inhaltsverzeichnis
+\setcounter{secnumdepth}{3}  % Nummerierung bis subsection
 
 \newbool{sperrvermerk}
 
 % Font settings
 \renewcommand{\familydefault}{\sfdefault}
 
-%%% Codebeispiele - Style
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
-\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+% Figure Caption
+\newcommand*{\captionsource}[2]{%
+    \caption{%
+    #1, 
+    Quelle: #2%
+  }%
+}
+
+% Table center with width
+
+\newcolumntype{x}[1]{>{\centering\arraybackslash\hspace{0pt}}p{#1}}
+
+% Codebeispiele - Style
+\DeclareCaptionFont{black}{\color{black}}
+\DeclareCaptionFormat{listing}{\parbox{\dimexpr\textwidth-2\fboxsep}{\centering #1#2#3}}
+\captionsetup[lstlisting]{format=listing,labelfont=black,textfont=black}
+
+\lstloadlanguages{csh}
+
+\definecolor{commentcolor}{HTML}{008000}
+\definecolor{keywordcolor}{HTML}{0000ff}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{stringcolor}{HTML}{a31515}
+\definecolor{codeyellow}{rgb}{0.67,0.67,0.0}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{sharpc}{
+language=csh,
+basicstyle=\footnotesize\ttfamily,
+numbers=left,
+numberstyle=\tiny\color{codegray},
+numbersep=15pt,
+captionpos=b,    
+tabsize=2,
+extendedchars=true,
+breaklines=true,
+stringstyle=\color{stringcolor}\ttfamily,
+showspaces=false,
+showtabs=false,
+xleftmargin=22pt,
+aboveskip=25pt,
+belowskip=25pt,
+commentstyle=\color{commentcolor},
+morecomment=[l]{//}, %use comment-line-style!
+morecomment=[s]{/*}{*/}, %for multiline comments
+showstringspaces=false,
+morekeywords={ abstract, event, new, struct,
+as, explicit, null, switch,
+base, extern, object, this,
+bool, false, operator, throw,
+break, finally, out, true,
+byte, fixed, override, try,
+case, float, params, typeof,
+catch, for, private, uint,
+char, foreach, protected, ulong,
+checked, goto, public, unchecked,
+class, if, readonly, unsafe,
+const, implicit, ref, ushort,
+continue, in, return, using,
+decimal, int, sbyte, virtual,
+default, interface, sealed, volatile,
+delegate, internal, short, void,
+do, is, sizeof, while,
+double, lock, stackalloc,
+else, long, static,
+enum, namespace, string},
+keywordstyle=\color{keywordcolor},
+identifierstyle=\color{black},
+backgroundcolor=\color{white},
+}
+
+\lstset{style=sharpc}
 
 % Entfernt Kapitel Ueberschrift
-% Bsp.
-% 	ALT:
-%       Kapitel 1
-%       Einführung
-%
-% 	NEU:
-% 		1 Einführung
-%
 \renewcommand*\chapterheadstartvskip{\vspace{-\topskip}}
